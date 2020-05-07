@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>INGRESAR PRODUCTOS</h1>
+	<form th:action="@{formProducto}" th:object="${producto}" method="post">
+		<label>Nombre del Producto</label>
+		<input type="text" th:field="*{nombre}"><br>
+		<span th:errors="*{nombre}" style="color:#E81505"></span><br>
+		
+		<label>Descripcion del producto</label>
+		<input type="text" th:field="*{descripcion}"><br>
+		<span th:errors="*{descripcion}" style="color:#E81505"></span><br>
+		
+		<label>Precio del producto</label>
+		<input type="number" th:field="*{precio}"><br>
+		<span th:errors="*{precio}" style="color:#E81505"></span><br>
+		
+		<label>Fecha de Vencimiento</label>
+		<input type="text" th:field="*{vencimiento}"><br>
+		<span th:errors="*{vencimiento}" style="color:#E81505"></span><br>
+		
+		<input type="submit" value="Agregar Producto"/>
+		
+	</form>
+
+</body>
